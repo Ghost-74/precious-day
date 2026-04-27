@@ -1,0 +1,339 @@
+/* 🌙 Global */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a0f1f, #2b1331, #3a1c40);
+    color: #f8e9f0;
+}
+
+/* 💖 Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: radial-gradient(circle at top, rgba(255, 105, 180, 0.2), transparent 60%);
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    letter-spacing: 2px;
+   
+
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+.hero p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* 💌 Sections */
+.message, .gallery, .video {
+    margin: 40px auto;
+    width: 85%;
+    max-width: 900px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.15);
+}
+
+/* ✨ Headings */
+h2 {
+    color: #ffb6c1;
+    margin-bottom: 15px;
+}
+
+/* 📸 Gallery */
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.images img {
+    width: 100%;
+    height: 250px;          /* fixed height */
+    object-fit: cover;      /* keeps aspect ratio, crops nicely */
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+}
+.images img {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+/* 🎥 Video */
+video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.2);
+}
+
+
+/* 🔐 Hidden */
+.hidden {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+    color: #ffd6e7;
+}
+
+/* Glow animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff4d6d;
+    }
+    to {
+        text-shadow: 0 0 25px #ff4d6d, 0 0 40px #ff1e3c;
+    }
+}
+
+/* 💖 Hearts */
+.heart {
+    position: absolute;
+    animation: float 6s linear infinite;
+
+    color: #ff1e3c; /* rich red */
+    font-size: 28px; /* bigger default */
+
+    text-shadow: 0 0 10px rgba(255, 30, 60, 0.6),
+                 0 0 20px rgba(255, 30, 60, 0.4);
+
+    color: #b3122f;
+text-shadow: 0 0 12px rgba(179, 18, 47, 0.7);             
+}
+
+/* 🎬 Cinematic Entry Effect */
+
+/* Hidden initially */
+#mainContent {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+
+/* Reveal animation */
+#mainContent.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Optional blur effect */
+#mainContent {
+    filter: blur(10px);
+}
+
+#mainContent.show {
+    filter: blur(0);
+}
+   
+
+/* ✨ Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .message, .gallery, .video {
+        width: 95%;
+        padding: 20px;
+    }
+
+    #secretBtn {
+        width: 90%;
+    }
+}
+
+/* 💖 Intro Screen */
+#introScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a0f1f, #2b1331);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    text-align: center;
+}
+
+#introScreen h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff4d6d;
+}
+
+#introScreen p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ffd6e7;
+    opacity: 0.8;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+@keyframes glowPulse {
+    0% {
+        text-shadow:
+            0 0 10px rgba(255, 77, 109, 0.6),
+            0 0 20px rgba(255, 77, 109, 0.5),
+            0 0 30px rgba(255, 0, 80, 0.5);
+    }
+    100% {
+        text-shadow:
+            0 0 20px rgba(255, 77, 109, 1),
+            0 0 40px rgba(255, 0, 80, 0.9),
+            0 0 70px rgba(255, 0, 80, 0.8);
+    }
+}
+
+.hero h1 {
+    animation: glowPulse 1.5s infinite alternate;
+}
+
+/* 💖 Intro Text Glow */
+#introScreen h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff4d6d;
+
+    text-shadow:
+        0 0 10px rgba(255, 77, 109, 0.7),
+        0 0 20px rgba(255, 77, 109, 0.6),
+        0 0 40px rgba(255, 0, 80, 0.6),
+        0 0 60px rgba(255, 0, 80, 0.5);
+
+    animation: introGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* 💖 Optimized Intro Glow (mobile-friendly) */
+#introScreen h1 {
+    color: #ff4d6d;
+
+    text-shadow:
+        0 0 8px rgba(255, 77, 109, 0.6),
+        0 0 16px rgba(255, 77, 109, 0.5);
+
+    animation: introGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes introGlow {
+    from {
+        text-shadow:
+            0 0 8px rgba(255, 77, 109, 0.5);
+    }
+    to {
+        text-shadow:
+            0 0 16px rgba(255, 77, 109, 0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    #mainContent {
+        filter: none !important;
+    }
+}
+
+.hearts {
+    pointer-events: none;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* 🎨 Art Section */
+.art {
+    margin: 40px auto;
+    width: 85%;
+    max-width: 900px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.15);
+    text-align: center;
+}
+
+.art-container img {
+    width: 100%;
+    max-width: 650px;   /* increased size */
+    border-radius: 18px;
+    margin: 20px 0;
+
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.art-container img:hover {
+    transform: scale(1.05);
+}
+
+.art-note {
+    font-size: 1rem;
+    color: #ffd6e7;
+    margin-top: 10px;
+    line-height:1.6;
+}
+
+@media (max-width: 768px) {
+    .art-container img {
+        max-width: 95%;
+    }
+}
